@@ -1,3 +1,4 @@
 flask
 numpy>=1.24
-flask-cores
+flask-cors
+
