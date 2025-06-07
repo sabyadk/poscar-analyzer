@@ -1,8 +1,10 @@
 from flask import Flask, request, jsonify
 import numpy as np
 import os
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)  # Enables frontend-backend communication
 
 @app.route('/')
 def home():
@@ -27,7 +29,7 @@ def analyze_poscar():
         'scale_factor': scale,
         'lattice_vectors': lattice,
     }
-
+    print(result)
     return jsonify(result)
 
 if __name__ == '__main__':
